@@ -1,0 +1,28 @@
+{
+  "name": "model-stacker-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HowTerrible/ModelStackerServer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HowTerrible/ModelStackerServer/issues"
+  },
+  "homepage": "https://github.com/HowTerrible/ModelStackerServer#readme",
+  "dependencies": {
+    "@types/formidable": "^3.4.5",
+    "@types/lodash-es": "^4.17.12",
+    "express": "^4.19.2",
+    "formidable": "^3.5.1",
+    "lodash-es": "^4.17.21",
+    "mime": "^4.0.4"
+  }
+}
