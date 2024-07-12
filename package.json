@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "dev": "nodemon --exec \"npx ts-node\" src/main.ts"
   },
   "repository": {
     "type": "git",
@@ -18,11 +21,15 @@
   },
   "homepage": "https://github.com/HowTerrible/ModelStackerServer#readme",
   "dependencies": {
+    "@types/express": "^4.17.21",
     "@types/formidable": "^3.4.5",
     "@types/lodash-es": "^4.17.12",
+    "@types/node": "^20.14.10",
     "express": "^4.19.2",
     "formidable": "^3.5.1",
     "lodash-es": "^4.17.21",
-    "mime": "^4.0.4"
+    "mime": "^4.0.4",
+    "nodemon": "^3.1.4",
+    "typescript": "^5.5.3"
   }
 }
