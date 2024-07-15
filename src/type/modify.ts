@@ -2,9 +2,10 @@
  * Model modifications
  */
 
+import { DeleteType } from '.';
 import { IBrandId } from './brand';
 import { IModel } from './model';
-import { IRealItemId } from './readItem';
+import { IRealItemId } from './realItem';
 
 export interface IModifyId {
   modifyId: string;
@@ -30,7 +31,7 @@ export enum ModifyPartEnum {
   其他 = 4,
 }
 
-export interface IModify extends IModel {
+export interface IModify extends IModel, DeleteType {
   /** 改件类型 1: 树脂件; 2: 金属件; 3: 套改; 4: 三弟打印; 5: 其他; 6: 场景件; */
   type: ModifyTypeEnum;
   /** 改件位置 1: 炮管; 2: 轮子; 3: 履带; 4: 其他; */

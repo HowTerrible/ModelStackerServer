@@ -2,6 +2,7 @@
  * Purchase history
  */
 
+import { DeleteType } from '.';
 import { IModelId } from './model';
 import { IModifyId } from './modify';
 
@@ -12,7 +13,7 @@ export interface IRecordId {
 /** 订单中项目的记录
  * 和订单记录构成循环引用, 方便索引
  */
-export interface IOrderItemRecord extends IRecordId {
+export interface IOrderItemRecord extends IRecordId, DeleteType {
   /** 不一定非得是模型 */
   itemId?: IModelId | IModifyId;
   /** 不是已记录的模型或改件, 建议写上名字 */
@@ -22,7 +23,7 @@ export interface IOrderItemRecord extends IRecordId {
 }
 
 /** 订单记录 */
-export interface IOrderRecord extends IRecordId {
+export interface IOrderRecord extends IRecordId, DeleteType {
   /** 订单时间 */
   orderTime: string;
   /** 订单价格 */
@@ -36,7 +37,7 @@ export interface IOrderRecord extends IRecordId {
 }
 
 /** 价格记录 */
-export interface IPriceRecord {
+export interface IPriceRecord extends DeleteType {
   /** 价格 */
   price: string;
   /** 价格对应的时间 */

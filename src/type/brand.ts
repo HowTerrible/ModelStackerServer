@@ -2,11 +2,13 @@
  * Brand ( manufacturer )
  */
 
+import { DeleteType } from '.';
+
 export interface IBrandId {
   brandId: string;
 }
 
-export interface IBrand extends IBrandId {
+export interface IBrand extends IBrandId, DeleteType {
   brandName: string;
   /** 外号 */
   nickname?: string[];

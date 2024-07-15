@@ -2,16 +2,17 @@
  * Model
  */
 
+import { DeleteType } from '.';
 import { IBrand, IBrandId } from './brand';
 import { IModifyId } from './modify';
-import { IRealItemId } from './readItem';
+import { IRealItemId } from './realItem';
 import { IPriceRecord } from './record';
 
 export interface IModelId {
   modelId: string;
 }
 
-export interface IModel extends IModelId, IRealItemId, IBrandId {
+export interface IModel extends IModelId, IRealItemId, IBrandId, DeleteType {
   /** 模型全名 一般指封绘上全名 */
   modelName: string;
   /** 外号 */
