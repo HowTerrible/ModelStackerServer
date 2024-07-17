@@ -1,12 +1,4 @@
-export interface IDictKeyValuePair {
-  label: string;
-  value: string;
-}
-
-export interface IDict {
-  name: string;
-  dicts: IDictKeyValuePair[];
-}
+export type NullableType<T> = T | null | undefined;
 
 /** 通用布尔枚举 */
 export enum CommonBooleanEnum {
