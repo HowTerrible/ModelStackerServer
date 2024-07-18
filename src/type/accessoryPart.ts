@@ -7,12 +7,12 @@ import { IBrandId } from './brand';
 import { IModel } from './model';
 import { IRealItemId } from './realItem';
 
-export interface IModifyId {
+export interface IAccessoryPartId {
   modifyId: string;
 }
 
 /** 改件类型 1: 树脂件; 2: 金属件; 3: 套改; 4: 三弟打印; 5: 其他; 6: 场景件; */
-export enum ModifyTypeEnum {
+export enum AccessoryPartTypeEnum {
   树脂件 = 1,
   /** 蚀刻片/车制件 */
   金属件 = 2,
@@ -23,7 +23,7 @@ export enum ModifyTypeEnum {
 }
 
 /** 改件位置 1: 炮管; 2: 轮子; 3: 履带; 4: 其他; */
-export enum ModifyPartEnum {
+export enum AccessoryPartPartEnum {
   /** 炮管/枪管 英文都是barrel */
   炮管 = 1,
   轮子 = 2,
@@ -31,7 +31,7 @@ export enum ModifyPartEnum {
   其他 = 4,
 }
 
-export interface IModify extends IModel, DeleteType {
+export interface IAccessoryPart extends IModel, DeleteType, IAccessoryPartId {
   /** 改件类型 1: 树脂件; 2: 金属件; 3: 套改; 4: 三弟打印; 5: 其他; 6: 场景件; */
   type: ModifyTypeEnum;
   /** 改件位置 1: 炮管; 2: 轮子; 3: 履带; 4: 其他; */
