@@ -1,10 +1,12 @@
 import { JsonDB } from 'node-json-db';
 import { Config } from 'node-json-db/dist/lib/JsonDBConfig';
 import { DataPath } from '../constant/path';
-import { IDictKeyValuePair } from '../type/dict';
+import { IDictKeyValuePair } from '@ht-model-stacker/types';
 import { HTListDB } from '.';
 
-export const dictDb = new JsonDB(new Config(DataPath.dict, true, true, '/', true));
+export const dictDb = new JsonDB(
+  new Config(DataPath.dict, true, true, '/', true)
+);
 
 function getDictPath(name: string) {
   return '/' + name;
@@ -28,7 +30,11 @@ export async function GetDict(name: string) {
  * @param value 字典项值
  * @returns {boolean} 是否新增成功
  */
-export async function AddDictItem(name: string, label: string, value: string | number) {
+export async function AddDictItem(
+  name: string,
+  label: string,
+  value: string | number
+) {
   db.AddListItem(getDictPath(name), { label, value }, 'value');
 }
 
@@ -39,6 +45,10 @@ export async function AddDictItem(name: string, label: string, value: string | n
  * @param value
  * @returns
  */
-export async function EditDictItem(name: string, label: string, value: string | number) {
+export async function EditDictItem(
+  name: string,
+  label: string,
+  value: string | number
+) {
   db.EditListItem(getDictPath(name), { label, value }, 'value');
 }

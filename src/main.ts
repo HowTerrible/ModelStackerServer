@@ -1,4 +1,5 @@
 import express from 'express';
+import { logger } from './common/logger';
 
 const server = express();
 const restartDuration = 2000;
@@ -12,7 +13,7 @@ server.use((req, res, next) => {
 });
 
 server.get('/', (req, res) => {
-  console.log('寄');
+  logger.info('寄');
   res.end();
 });
 
@@ -20,7 +21,7 @@ function main() {
   const current = server.listen(PORT);
 
   current.on('listening', () => {
-    console.log(`Server is running at http://localhost:${PORT}`);
+    logger.info(`Server is running at http://localhost:${PORT}`);
   });
 
   current.on('error', (err) => {
@@ -29,9 +30,9 @@ function main() {
       return;
     }
 
-    console.log(`Port ${PORT} already in use.`);
+    logger.error(`Port ${PORT} already in use.`);
 
-    console.log(`Server is trying to restart at new port ${++PORT}`);
+    logger.warn(`Server is trying to restart at new port ${++PORT}`);
 
     setTimeout(() => {
       current.listen(PORT);
